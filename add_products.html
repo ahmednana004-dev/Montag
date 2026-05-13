@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 <meta charset="UTF-8">
@@ -30,71 +29,65 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 const products = [
-{ id: “9006460908154”, name: “Chili-Chesse-Krainer” },
-{ id: “9006460908147”, name: “Käsekrainer 3er/kg” },
-{ id: “2700119007126”, name: “Burenwurst 6 Stk.” },
-{ id: “9006460902619”, name: “Leberkäse Classic heiß geschn. 500g” },
-{ id: “9006460909694”, name: “Schweinsbraten 300g” },
-{ id: “2212100560003”, name: “Hamburger Speck geschnitten 250g” },
-{ id: “2700189009464”, name: “Leberkäse Chili 10er Schnitten” },
-{ id: “9066000255100”, name: “Pizzakäse” },
-{ id: “2228100760008”, name: “Hamburger” },
-{ id: “2700182009447”, name: “Leberkäse Käse 10er Schnitten” },
-{ id: “2702234004660”, name: “Debreziner XXL 3 Paar” },
-{ id: “2702369002623”, name: “Puten-Extra geschnitten 250g” },
-{ id: “2702230002660”, name: “Krakauer hell 250g” },
-{ id: “2702368002686”, name: “Käsewurst geschnitten 250g” },
-{ id: “2702462002643”, name: “Wienerwälder geschnitten 250g” },
-{ id: “2702233004500”, name: “Frankfurter XXL 3 Paar” },
-{ id: “2700181009363”, name: “Leberkäse Classic 10er Schnitten” },
-{ id: “2700471019188”, name: “Leberkäse Chili Cheese 2kg Block” },
-{ id: “2700452019671”, name: “Leberkäse Käse 2kg Block” },
-{ id: “2700451019221”, name: “Leberkäse Classic 2kg Block” },
-{ id: “9003903453400”, name: “Beinschinken geschnitten 500g” },
-{ id: “2701168005552”, name: “Putenschinken geschnitten 500g” },
-{ id: “2201974300006”, name: “Obstsalat 1kg” },
-{ id: “4337182041177”, name: “Mozzarella Stange Karton” },
-{ id: “9004584055655”, name: “Almkönig 1 KG” },
-{ id: “2730199000007”, name: “Toastschinken gestiftelt 4 kg” },
-{ id: “9006460902817”, name: “Leberkäse Classic gesch. 1 kg” },
-{ id: “2212100840006”, name: “Toastschinken geschnitten 5 kg” },
-{ id: “2212100690007”, name: “Wienerwurst geschnitten 2kg” },
-{ id: “2212100800000”, name: “Käsewurst geschnitten 1 kg” },
-{ id: “2212100580001”, name: “Toastschinken geschnitten 500g” },
-{ id: “9120061933008”, name: “Hummus natur 1 Kg” },
-{ id: “4000339034840”, name: “Philadelphia 1,65 Kg” },
-{ id: “2701006004839”, name: “Extra Wurst geschnitten 1kg” },
-{ id: “9006051051078”, name: “Sandwichsalami 500g” },
-{ id: “9003507221504”, name: “Grammelschmalz 150g” },
-{ id: “3760010641200”, name: “Erdnussbutter 340g” }
+  { id: "9006460908154", name: "Chili-Chesse-Krainer" },
+  { id: "9006460908147", name: "Käsekrainer 3er/kg" },
+  { id: "2700119007126", name: "Burenwurst 6 Stk." },
+  { id: "9006460902619", name: "Leberkäse Classic heiß geschn. 500g" },
+  { id: "9006460909694", name: "Schweinsbraten 300g" },
+  { id: "2212100560003", name: "Hamburger Speck geschnitten 250g" },
+  { id: "2700189009464", name: "Leberkäse Chili 10er Schnitten" },
+  { id: "9066000255100", name: "Pizzakäse" },
+  { id: "2228100760008", name: "Hamburger" },
+  { id: "2700182009447", name: "Leberkäse Käse 10er Schnitten" },
+  { id: "2702234004660", name: "Debreziner XXL 3 Paar" },
+  { id: "2702369002623", name: "Puten-Extra geschnitten 250g" },
+  { id: "2702230002660", name: "Krakauer hell 250g" },
+  { id: "2702368002686", name: "Käsewurst geschnitten 250g" },
+  { id: "2702462002643", name: "Wienerwälder geschnitten 250g" },
+  { id: "2702233004500", name: "Frankfurter XXL 3 Paar" },
+  { id: "2700181009363", name: "Leberkäse Classic 10er Schnitten" },
+  { id: "2700471019188", name: "Leberkäse Chili Cheese 2kg Block" },
+  { id: "2700452019671", name: "Leberkäse Käse 2kg Block" },
+  { id: "2700451019221", name: "Leberkäse Classic 2kg Block" },
+  { id: "9003903453400", name: "Beinschinken geschnitten 500g" },
+  { id: "2701168005552", name: "Putenschinken geschnitten 500g" },
+  { id: "2201974300006", name: "Obstsalat 1kg" },
+  { id: "4337182041177", name: "Mozzarella Stange Karton" },
+  { id: "9004584055655", name: "Almkönig 1 KG" },
+  { id: "2730199000007", name: "Toastschinken gestiftelt 4 kg" },
+  { id: "9006460902817", name: "Leberkäse Classic gesch. 1 kg" },
+  { id: "2212100840006", name: "Toastschinken geschnitten 5 kg" },
+  { id: "2212100690007", name: "Wienerwurst geschnitten 2kg" },
+  { id: "2212100800000", name: "Käsewurst geschnitten 1 kg" },
+  { id: "2212100580001", name: "Toastschinken geschnitten 500g" },
+  { id: "9120061933008", name: "Hummus natur 1 Kg" },
+  { id: "4000339034840", name: "Philadelphia 1,65 Kg" },
+  { id: "2701006004839", name: "Extra Wurst geschnitten 1kg" },
+  { id: "9006051051078", name: "Sandwichsalami 500g" },
+  { id: "9003507221504", name: "Grammelschmalz 150g" },
+  { id: "3760010641200", name: "Erdnussbutter 340g" }
 ];
 
-const log = document.getElementById(‘log’);
+const log = document.getElementById('log');
 
 async function addAll() {
-let count = 0;
-for (const p of products) {
-try {
-const doc = await db.collection(“smart_products”).doc(p.id).get();
-if (doc.exists) {
-log.innerHTML += `<div style="color:#94a3b8">⏭ موجود: ${p.name}</div>`;
-} else {
-await db.collection(“smart_products”).doc(p.id).set({
-name: p.name,
-batches: [{ date: “2026-05-30”, qty: 1 }]
-});
-log.innerHTML += `<div class="ok">✅ تم: ${p.name}</div>`;
-count++;
-}
-} catch(e) {
-log.innerHTML += `<div class="err">❌ فشل: ${p.name}</div>`;
-}
-}
-document.getElementById(‘status’).innerHTML = `<span class="ok">✅ خلص! تم إضافة ${count} منتج جديد</span>`;
+  let count = 0;
+  for (const p of products) {
+    try {
+      await db.collection("smart_products").doc(p.id).set({
+        name: p.name,
+        batches: [{ date: "2026-05-30", qty: 1 }]
+      }, { merge: true });
+      log.innerHTML += `<div class="ok">✅ ${p.name}</div>`;
+      count++;
+    } catch(e) {
+      log.innerHTML += `<div class="err">❌ فشل: ${p.name} - ${e.message}</div>`;
+    }
+  }
+  document.getElementById('status').innerHTML = `<span class="ok">✅ خلص! ${count} منتج</span>`;
 }
 
 addAll();
 </script>
-
 </body>
 </html>
